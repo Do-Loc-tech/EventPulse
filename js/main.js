@@ -6,8 +6,7 @@
     base = inPages ? "../" : "";
   const page =
     location.pathname.split("/").pop().replace(".html", "") || "index";
-  const route = page === "index" ? "admin-ticket-type-management" : page;
-  const role = "admin";
+  const route = page === "index" ? "home" : page;
   const groups = {
     attendee: [
       "Người tham dự",
@@ -46,6 +45,7 @@
       ],
     ],
   };
+  const role = route.split("-")[0] in groups ? route.split("-")[0] : "attendee";
   const e = (v) =>
     String(v ?? "").replace(
       /[&<>"']/g,
@@ -208,7 +208,20 @@
             <p>Khám phá, lên lịch và kết nối tại Vietnam Tech Summit.</p>
             ${btn("help", "Hướng dẫn demo", "", "link")}
           </div>
-          <span class="role-label">Dự án: ${groups[role][0]}</span>
+          <label class="role-label" for="role">Chuyển vai trò demo</label
+          ><select id="role">
+            ${Object.entries(groups)
+              .map(
+                ([k, [t]]) =>
+                  /* HTML */ `<option
+                    value="${k}"
+                    ${role === k ? "selected" : ""}
+                  >
+                    ${t}
+                  </option>`,
+              )
+              .join("")}
+          </select>
         </div>
       </aside>
       <div class="shell">
@@ -249,6 +262,13 @@
           ><a href="${base}index.html">Về Trang chủ →</a>
         </footer>
       </div>`;
+    $("#role").addEventListener(
+      "change",
+      (ev) =>
+        (location.href = url(
+          ev.target.value + "-" + groups[ev.target.value][1][0][0],
+        )),
+    );
   }
   function card(s) {
     const saved = state().agenda.includes(s.id),
@@ -1105,6 +1125,18 @@ ${e(p.bio)}</textarea
     });
   }
   const views = {
+    "attendee-session-catalog": catalog,
+    "attendee-session-detail": detail,
+    "attendee-my-agenda": myAgenda,
+    "attendee-session-feedback": feedback,
+    "speaker-profile": profile,
+    "speaker-my-session": speakerSessions,
+    "speaker-session-materials": materials,
+    "speaker-session-insights": insights,
+    "organizer-session-management": () => management("sessions"),
+    "organizer-room-management": roomManagement,
+    "organizer-event-alerts": enhancedAlerts,
+    "organizer-interest-forecast": newForecast,
     "admin-ticket-type-management": ticketManagement,
     "admin-user-management": userManagement,
     "admin-event-analytics": eventAnalytics,
@@ -1118,10 +1150,7 @@ ${e(p.bio)}</textarea
         ($("#content").innerHTML = heading(
           "Không tìm thấy trang",
           "Hãy quay lại danh mục session.",
-          link(
-            role + "-" + groups[role][1][0][0],
-            "Trang chủ",
-          ),
+          link("attendee-session-catalog", "Trang chủ"),
         )))
     )();
     if (route === "speaker-profile") loadProfileAvatar();
@@ -3881,8 +3910,8 @@ ${e(s.notes[id] || "")}</textarea
       return modal(
         "Hướng dẫn demo",
         /* HTML */ `<p>
-            Dự án Quản trị viên gồm bốn màn hình và lưu dữ liệu riêng trên thiết
-            bị này.
+            Chọn vai trò ở cuối thanh bên để truy cập 16 màn hình. Dữ liệu dùng
+            chung được lưu trong LocalStorage.
           </p>
           <p>
             Thử tìm và thêm session → kiểm tra Agenda → gửi phản hồi. Với ban tổ

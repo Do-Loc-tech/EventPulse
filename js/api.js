@@ -1,7 +1,7 @@
 /* Local demo repository: no backend or external AI calls. */
 (() => {
-  const KEY = "eventpulse.admin.v2";
-  const LEGACY_KEY = "eventpulse.admin.v1";
+  const KEY = "eventpulse.v2";
+  const LEGACY_KEY = "eventpulse.v1";
   const seed = {
     sessions: [
       {
