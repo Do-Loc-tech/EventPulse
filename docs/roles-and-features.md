@@ -19,5 +19,3 @@
 - Tài liệu chỉ hiển thị cho người tham dự khi xuất bản và phù hợp quyền. Tệp PDF/PPT/PPTX/DOCX/MP4 tối đa 200 MB được lưu bằng IndexedDB.
 - Quota vé không thấp hơn đã bán. Đổi giá không thay doanh thu lịch sử. Vô hiệu hóa chỉ ngừng bán mới.
 - Email người dùng và tên phòng không trùng. Khóa/mở khóa giữ tài khoản, vé và phản hồi.
-
-Bản frontend mô phỏng luồng nghiệp vụ, không thực thi phân quyền bảo mật. Xem [đối chiếu PDF và giới hạn](pdf-update.md).

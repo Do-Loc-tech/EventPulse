@@ -1,6 +1,6 @@
 # Danh sách màn hình
 
-17 màn hình theo `figma-eventpulse2.pdf`: một trang chủ chung và 16 trang workspace. Điểm vào: [index.html](../index.html).
+17 màn hình: một trang chủ chung và 16 trang workspace. Điểm vào: [index.html](../index.html).
 
 | Vai trò | Màn hình | File |
 |---|---|---|

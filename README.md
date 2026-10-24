@@ -76,7 +76,6 @@ Tổng hợp phản hồi ẩn danh theo từ khóa, loại bản trùng, hiển
 - Responsive Web Design
 - Mock data / JSON / LocalStorage
 - Git + GitHub
-- Trello / Jira / Notion
 
 ## Mục tiêu học tập
 
@@ -117,13 +116,13 @@ Dùng menu **Chuyển vai trò demo** ở cuối sidebar để truy cập bốn 
 ### Cấu trúc triển khai
 
 - `index.html`: trang chủ sự kiện riêng theo trang 1 PDF, điểm vào bốn workspace.
-- `pages/`: 16 màn hình workspace (4 trang mỗi vai trò), ngoài trang chủ; tương ứng bản `figma-eventpulse2.pdf`.
+- `pages/`: 16 màn hình workspace (4 trang mỗi vai trò), ngoài trang chủ.
 - `css/style.css`, `css/responsive.css`: giao diện và responsive.
 - `js/api.js`: kho dữ liệu giả lập, LocalStorage, xuất CSV.
 - `js/modules/ai.js`: quy tắc mô phỏng bốn tính năng AI.
 - `js/main.js`: render giao diện, điều hướng, validation và tương tác.
 - `assets/data/mock-data.json`: bản dữ liệu mẫu tham khảo. `js/api.js` chứa cùng dữ liệu để mở trực tiếp HTML mà không cần fetch. Khi thay seed, cập nhật cả hai file.
-- `assets/images/`: ba ảnh session trích xuất từ PDF Figma được cung cấp.
+- `assets/images/`: trích xuất từ `design\figma-link.txt`.
 
 ### Kịch bản demo
 
@@ -144,7 +143,3 @@ Dùng menu **Chuyển vai trò demo** ở cuối sidebar để truy cập bốn 
 - Vé chỉ quản lý loại vé, không xử lý thanh toán. Thông báo được mô phỏng trong trình duyệt.
 - Nếu LocalStorage không khả dụng hoặc hết dung lượng, ứng dụng báo lỗi và giữ dữ liệu trong phiên hiện tại.
 - Git/PR, phân công thực tế và video OBS cần nhóm thực hiện; demo không tạo bằng chứng giả.
-
-## Bản thiết kế mới (06/10/2026)
-
-Nguồn: [figma-eventpulse2.pdf](figma-eventpulse2.pdf), 17 trang. Đối chiếu chi tiết và giới hạn: [docs/pdf-update.md](docs/pdf-update.md). Dữ liệu demo dùng 9 session, 5 phòng, 5 tài khoản và 4 loại vé; các số đếm lấy từ dữ liệu hiện tại, không gắn cứng 48 session/1.482 tài khoản của bản mẫu. Nếu trình duyệt đang có dữ liệu v1, ứng dụng chuyển dữ liệu sang v2 và giữ thay đổi; dùng Khôi phục dữ liệu mẫu để xem seed mới.
