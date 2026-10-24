@@ -2,7 +2,7 @@
 
 ## AI hỗ trợ phát triển
 
-Codex hỗ trợ đọc README/đề xuất/PDF, tạo HTML/CSS/JavaScript, nối luồng dữ liệu, viết tài liệu và kiểm tra. Nhóm cần tự đọc, giải thích, điều chỉnh và ghi nhận đóng góp thực tế; tài liệu này không xác nhận phân công hay lịch sử Git của thành viên.
+Codex hỗ trợ đọc README/đề xuất/PDF, tạo HTML/CSS/JavaScript, nối luồng dữ liệu, viết tài liệu và kiểm tra.
 
 ## Bốn tính năng AI mô phỏng
 

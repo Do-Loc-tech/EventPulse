@@ -117,13 +117,13 @@ Dùng menu **Chuyển vai trò demo** ở cuối sidebar để truy cập bốn 
 ### Cấu trúc triển khai
 
 - `index.html`: trang chủ sự kiện riêng theo trang 1 PDF, điểm vào bốn workspace.
-- `pages/`: 16 màn hình workspace (4 trang mỗi vai trò), ngoài trang chủ; tương ứng bản `figma-eventpulse2.pdf`.
+- `pages/`: 16 màn hình workspace (4 trang mỗi vai trò), ngoài trang chủ.
 - `css/style.css`, `css/responsive.css`: giao diện và responsive.
 - `js/api.js`: kho dữ liệu giả lập, LocalStorage, xuất CSV.
 - `js/modules/ai.js`: quy tắc mô phỏng bốn tính năng AI.
 - `js/main.js`: render giao diện, điều hướng, validation và tương tác.
 - `assets/data/mock-data.json`: bản dữ liệu mẫu tham khảo. `js/api.js` chứa cùng dữ liệu để mở trực tiếp HTML mà không cần fetch. Khi thay seed, cập nhật cả hai file.
-- `assets/images/`: ba ảnh session trích xuất từ PDF Figma được cung cấp.
+- `assets/images/`: trích xuất từ PDF Figma.
 
 ### Kịch bản demo
 
